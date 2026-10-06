@@ -1,247 +1,3 @@
-// 'use client';
-
-// import Link from 'next/link';
-// import {  useEffect, useState } from 'react';
-// import {
-//   Linkedin,
-//   Twitter,
-//   Instagram,
-//   Facebook,
-//   Youtube,
-//   Mail,
-//   Phone,
-//   MapPin,
-//   ArrowRight,
-//   Send,
-// } from 'lucide-react';
-// import { siteConfig } from '@/lib/site-data';
-// import { services } from '@/lib/services';
-// import { industries } from '@/lib/industries';
-// import Image from 'next/image';
-// import { getWebsiteSettings } from '@/lib/settings';
-
-// export default function Footer() {
-//   const [email, setEmail] = useState('');
-//   const [subscribed, setSubscribed] = useState(false);
-//   const [settings,setSettings] = useState();
-//   console.log("settings",settings);
-//   useEffect(() => {
-//   const fetchSettings = async () => {
-//     try {
-//       const websiteSettings = await getWebsiteSettings();
-//       setSettings(websiteSettings);
-//     } catch (error) {
-//       console.error("Failed to fetch settings:", error);
-//     }
-//   };
-
-//   fetchSettings();
-// }, []);
-
-//   const handleSubscribe = (e: React.FormEvent) => {
-//     e.preventDefault();
-//     if (email) {
-//       setSubscribed(true);
-//       setEmail('');
-//       setTimeout(() => setSubscribed(false), 3000);
-//     }
-//   };
-
-//   return (
-//     <footer className="relative overflow-hidden bg-black text-sky">
-//       <div className="absolute inset-0 bg-grid-dark opacity-20" />
-//       <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-electric/10 blur-3xl" />
-
-//       {/* Delhi skyline silhouette — sits behind all footer content, fades
-//           into the brand-dark background. Swap the src for your own asset
-//           (a transparent-background silhouette PNG/SVG works best here). */}
-//       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 w-full opacity-20 sm:h-52 lg:h-64">
-//         <Image
-//           src="/images/delhiskyline.png"
-//           alt=""
-//           fill
-//           className="object-cover object-bottom"
-//           aria-hidden="true"
-//         />
-//         {/* soft fade so the skyline blends up into the dark background
-//             instead of cutting off with a hard edge */}
-//         <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent" />
-//       </div>
-
-//       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        
-//         {/* Newsletter Section */}
-//         <div className="grid gap-6 border-b border-white/10 py-8 md:py-10 lg:grid-cols-2 lg:items-center">
-//           <div className="text-center lg:text-left">
-//             <h3 className="text-xl font-bold text-white sm:text-2xl">
-//               Get Growth Insights in Your Inbox
-//             </h3>
-//             <p className="mt-2 text-sm text-sky/70">
-//               Join 15,000+ marketers getting our weekly digital marketing tips.
-//             </p>
-//           </div>
-//           <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 w-full max-w-md mx-auto lg:mx-0 lg:max-w-none">
-//             <input
-//               type="email"
-//               required
-//               value={email}
-//               onChange={(e) => setEmail(e.target.value)}
-//               placeholder="Enter your email"
-//               className="w-full flex-1 border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-sky/40 focus:border-ocean focus:outline-none"
-//             />
-//             <button
-//               type="submit"
-//               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-ocean px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition-all hover:bg-ocean-dark"
-//             >
-//               {subscribed ? 'Subscribed!' : 'Subscribe'}
-//               <Send className="h-4 w-4" />
-//             </button>
-//           </form>
-//         </div>
-
-//         {/* --- FIXED: Compact & Non-Overflowing Banner Section --- */}
-//     <div className="w-full h-[350px] flex items-center justify-center overflow-hidden">
-//   <Image
-//     src="/images/footebanner.png"
-//     alt="Footer Banner"
-//     width={1200}
-//     height={160}
-//     className="block w-full max-w-4xl h-auto"
-//     priority
-//   />
-// </div>
-//         {/* -------------------------------------------------------- */}
-
-//         {/* Main Footer Links & Info Grid */}
-//         <div className="grid gap-8 py-8 text-center sm:text-left sm:grid-cols-2 lg:grid-cols-5 md:py-10">
-          
-//           {/* Company Info */}
-//           <div className="sm:col-span-2 flex flex-col items-center sm:items-start">
-//             <Link href="/" className="flex items-center gap-2.5">
-//               <Image src="/images/logo.png" height={120} width={120} alt='logo' className="h-auto w-28 sm:w-32" />
-//             </Link>
-//             <p className="mt-4 max-w-sm text-sm leading-relaxed text-sky/70">
-//             {/* <Image src="/images/india-gate.png" height={80} width={80} alt='logo' className="h-auto w-28 sm:w-32" /> */}
-//               {siteConfig.description}
-//             </p>
-//             <div className="mt-4 space-y-2 w-full">
-//               <a href={`mailto:${settings?.email}`} className="flex items-center justify-center sm:justify-start gap-3 text-sm text-sky/70 transition-colors hover:text-electric">
-//                 <Mail className="h-4 w-4 flex-shrink-0" />
-//                 <span className="break-all">{settings?.email}</span>
-//               </a>
-//               <a href={`tel:${settings?.phone}`} className="flex items-center justify-center sm:justify-start gap-3 text-sm text-sky/70 transition-colors hover:text-electric">
-//                 <Phone className="h-4 w-4 flex-shrink-0" />
-//                 {settings?.phone}
-//               </a>
-//               <p className="flex items-start justify-center sm:justify-start gap-3 text-sm text-sky/70">
-//                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 hidden sm:block" />
-//                 <span>{settings?.address}</span>
-//               </p>
-//             </div>
-
-//             {/* Partner Logos */}
-//             <div className='flex gap-4 mt-6 justify-center sm:justify-start'>
-//               <div className="relative w-10 h-10">
-//                 <Image src="/images/google.svg" fill alt='Google partner' className="object-contain"/>
-//               </div>
-//               <div className="relative w-10 h-10">
-//                 <Image src="/images/semrush.svg" fill alt='Semrush partner' className="object-contain"/>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Quick Links */}
-//           <div>
-//             <h4 className="text-xs font-bold uppercase tracking-wider text-white sm:text-sm">
-//               Company
-//             </h4>
-//             <ul className="mt-3 space-y-2">
-//               {[
-//                 { label: 'About Us', href: '/about-us' },
-//                 { label: 'Careers', href: '/careers' },
-//                 { label: 'Portfolio', href: '/our-work/portfolio' },
-//                 { label: 'Case Studies', href: '/our-work/case-studies' },
-//                 { label: 'Testimonials', href: '/our-work/testimonials' },
-//                 { label: 'Blogs', href: '/blogs' },
-//                 { label: 'Contact', href: '/contact' },
-//               ].map((link) => (
-//                 <li key={link.href}>
-//                   <Link href={link.href} className="text-sm text-sky/70 transition-colors hover:text-electric block py-0.5 sm:py-0">
-//                     {link.label}
-//                   </Link>
-//                 </li>
-//               ))}
-//             </ul>
-//           </div>
-
-//           {/* Services */}
-//           <div>
-//             <h4 className="text-xs font-bold uppercase tracking-wider text-white sm:text-sm">
-//               Services
-//             </h4>
-//             <ul className="mt-3 space-y-2">
-//               {services.map((svc) => (
-//                 <li key={svc.slug}>
-//                   <Link href={`/services/${svc.slug}`} className="text-sm text-sky/70 transition-colors hover:text-electric block py-0.5 sm:py-0">
-//                     {svc.shortTitle}
-//                   </Link>
-//                 </li>
-//               ))}
-//             </ul>
-//           </div>
-
-//           {/* Industries */}
-//           <div>
-//             <h4 className="text-xs font-bold uppercase tracking-wider text-white sm:text-sm">
-//               Industries
-//             </h4>
-//             <ul className="mt-3 space-y-2">
-//               {industries.slice(0, 8).map((ind) => (
-//                 <li key={ind.slug}>
-//                   <Link href={`/industries/${ind.slug}`} className="text-sm text-sky/70 transition-colors hover:text-electric block py-0.5 sm:py-0">
-//                     {ind.name}
-//                   </Link>
-//                 </li>
-//               ))}
-//               <li className="flex justify-center sm:justify-start pt-0.5">
-//                 <Link href="/industries/more" className="flex items-center gap-1 text-sm font-semibold text-electric">
-//                   View All <ArrowRight className="h-3 w-3" />
-//                 </Link>
-//               </li>
-//             </ul>
-//           </div>
-//         </div>
-
-//         {/* Bottom bar */}
-//         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 md:flex-row text-center md:text-left">
-//           <p className="text-xs text-sky/60 sm:text-sm order-2 md:order-1">
-//             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
-//           </p>
-//           <div className="flex items-center gap-3 order-1 md:order-2">
-//             {[
-//               { Icon: Linkedin, href: settings?.socialLinks?.linkedin, label: 'LinkedIn' },
-//               { Icon: Twitter, href: settings?.socialLinks?.twitter, label: 'Twitter' },
-//               { Icon: Instagram, href: settings?.socialLinks?.instagram, label: 'Instagram' },
-//               { Icon: Facebook, href: settings?.socialLinks?.facebook, label: 'Facebook' },
-//               // { Icon: Youtube, href: siteConfig.social.youtube, label: 'YouTube' },
-//             ].map(({ Icon, href, label }) => (
-//               <a
-//                 key={label}
-//                 href={href}
-//                 target="_blank"
-//                 rel="noopener noreferrer"
-//                 aria-label={label}
-//                 className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-sky/70 transition-all hover:border-electric hover:bg-electric hover:text-white"
-//               >
-//                 <Icon className="h-4 w-4" />
-//               </a>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// }
 
 'use client';
 
@@ -254,6 +10,7 @@ import {
   Facebook,
   Mail,
   Phone,
+  MessageCircle,
   MapPin,
 } from 'lucide-react';
 import { siteConfig } from '@/lib/site-data';
@@ -276,74 +33,129 @@ export default function Footer() {
     fetchSettings();
   }, []);
 
+  // ---- Fallbacks (used only if backend has nothing) ----
+  const fallbackPhones = ['+91 9971591023'];
+  const fallbackWhatsapps = ['+91 9971591023'];
+  const fallbackEmails = ['info@wisdommarketing.in'];
+
+  // Prefer backend, else fallback. Filter out empty strings.
+  const phones: string[] = (
+    settings?.phones?.length ? settings.phones : fallbackPhones
+  ).filter(Boolean);
+
+  const whatsapps: string[] = (
+    settings?.whatsapps?.length ? settings.whatsapps : fallbackWhatsapps
+  ).filter(Boolean);
+
+  const emails: string[] = (
+    settings?.emails?.length ? settings.emails : fallbackEmails
+  ).filter(Boolean);
+
+  const address =
+    settings?.address ?? 'Sec-15A, Faridabad Haryana - 121007';
+
+  // strip non-digits for wa.me / tel: links
+  const digits = (v: string) => v.replace(/\D/g, '');
+
   return (
     <footer className="w-full bg-[#0a0a0a] text-white font-sans relative overflow-hidden">
-      {/* NOTE: no horizontal container padding here — the orange card must
-         touch the true left edge of the viewport, exactly like the screenshot */}
       <div className="relative z-10 mx-auto max-w-[1600px]">
         {/* ===== Main Grid ===== */}
         <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch gap-0">
 
-          {/* ===== ORANGE CONTACT CARD with folded/lifted top-right corner ===== */}
-      <div
-  className="lg:col-span-3 relative"
-  style={{
-    filter: 'drop-shadow(4px 6px 10px rgba(0,0,0,0.45))',
-  }}
->
-  <div
-    className="relative bg-gradient-to-br from-[#0129FF] to-[#031143] p-8 pr-10 h-full min-h-[30px] flex flex-col justify-center"
-    style={{
-      clipPath:
-        'polygon(0 0, calc(100% - 48px) 0, 100% 48px, 100% 100%, 0 100%)',
-    }}
-  >
-    <h3 className="text-[26px] font-bold mb-7 text-white">
-      Contact Us
-    </h3>
-
-    <ul className="space-y-5">
-      {/* Address */}
-      {(settings?.address ?? true) && (
-        <li className="flex items-start gap-3">
-          <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0 text-white" />
-          <span className="text-[14px] leading-relaxed text-white font-normal">
-            {settings?.address ??
-              'Sec-15A, Faridabad Haryana - 121007'}
-          </span>
-        </li>
-      )}
-
-      {/* Email */}
-      {(settings?.email ?? true) && (
-        <li className="flex items-start gap-3">
-          <Mail className="h-5 w-5 mt-0.5 flex-shrink-0 text-white" />
-          <div className="text-[14px] leading-relaxed text-white">
-            <span className="block">Email Us :</span>
-            <a
-              href={`mailto:${
-                settings?.email ?? 'info@wisdommarketing.in'
-              }`}
-              className="hover:underline break-all"
+          {/* ===== BLUE CONTACT CARD ===== */}
+          <div
+            className="lg:col-span-3 relative"
+            style={{ filter: 'drop-shadow(4px 6px 10px rgba(0,0,0,0.45))' }}
+          >
+            <div
+              // className="relative bg-gradient-to-br from-[#0129FF] to-[#031143] p-8 pr-10 h-full min-h-[30px] flex flex-col justify-center"
+              className="relative bg-gradient-to-br from-[#E10600] to-[#4A0300] p-8 pr-10 h-full min-h-[30px] flex flex-col justify-center"
+              style={{
+                clipPath:
+                  'polygon(0 0, calc(100% - 48px) 0, 100% 48px, 100% 100%, 0 100%)',
+              }}
             >
-              {settings?.email ?? 'info@wisdommarketing.in'}
-            </a>
-          </div>
-        </li>
-      )}
+              <h3 className="text-[26px] font-bold mb-7 text-white">
+                Contact Us
+              </h3>
 
-      {/* Phone */}
-      {(settings?.phone ?? true) && (
-        <li className="flex items-start gap-3">
-          <Phone className="h-5 w-5 mt-0.5 flex-shrink-0 text-white" />
-          <span className="text-[14px] leading-relaxed text-white">
-            Phone: {settings?.phone ?? '+91 9971591023'}
-          </span>
-        </li>
-      )}
-    </ul>
-  </div>
-</div>
+              <ul className="space-y-5">
+                {/* Address */}
+                {address && (
+                  <li className="flex items-start gap-3">
+                    <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0 text-white" />
+                    <span className="text-[14px] leading-relaxed text-white font-normal">
+                      {address}
+                    </span>
+                  </li>
+                )}
+
+                {/* Emails (multiple) */}
+                {emails.length > 0 && (
+                  <li className="flex items-start gap-3">
+                    <Mail className="h-5 w-5 mt-0.5 flex-shrink-0 text-white" />
+                    <div className="text-[14px] leading-relaxed text-white space-y-1">
+                      <span className="block">
+                        {emails.length > 1 ? 'Email Us :' : 'Email Us :'}
+                      </span>
+                      {emails.map((e, i) => (
+                        <a
+                          key={i}
+                          href={`mailto:${e}`}
+                          className="block hover:underline break-all"
+                        >
+                          {e}
+                        </a>
+                      ))}
+                    </div>
+                  </li>
+                )}
+
+                {/* Phones (multiple) */}
+                {phones.length > 0 && (
+                  <li className="flex items-start gap-3">
+                    <Phone className="h-5 w-5 mt-0.5 flex-shrink-0 text-white" />
+                    <div className="text-[14px] leading-relaxed text-white space-y-1">
+                      <span className="block">
+                        {phones.length > 1 ? 'Phone :' : 'Phone :'}
+                      </span>
+                      {phones.map((p, i) => (
+                        <a
+                          key={i}
+                          href={`tel:${digits(p)}`}
+                          className="block hover:underline"
+                        >
+                          {p}
+                        </a>
+                      ))}
+                    </div>
+                  </li>
+                )}
+
+                {/* WhatsApps (multiple) */}
+                {whatsapps.length > 0 && (
+                  <li className="flex items-start gap-3">
+                    <MessageCircle className="h-5 w-5 mt-0.5 flex-shrink-0 text-white" />
+                    <div className="text-[14px] leading-relaxed text-white space-y-1">
+                      <span className="block">WhatsApp :</span>
+                      {whatsapps.map((w, i) => (
+                        <a
+                          key={i}
+                          href={`https://wa.me/${digits(w)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block hover:underline"
+                        >
+                          {w}
+                        </a>
+                      ))}
+                    </div>
+                  </li>
+                )}
+              </ul>
+            </div>
+          </div>
 
           {/* ===== Right Side: 3 Columns ===== */}
           <div className="lg:col-span-9 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-10 lg:py-12 px-6 lg:px-10">
@@ -356,12 +168,9 @@ export default function Footer() {
               <ul className="space-y-4">
                 {services.map((svc) => (
                   <li key={svc.slug}>
-                    <Link
-                      href={`/services/${svc.slug}`}
-                      className="text-[13px] text-white/90 hover:text-[#ff6b00] transition-colors duration-200 uppercase tracking-wide"
-                    >
+                    <span className="text-[13px] text-white/90 hover:text-[#ff6b00] transition-colors duration-200 uppercase tracking-wide">
                       {svc.shortTitle}
-                    </Link>
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -374,44 +183,29 @@ export default function Footer() {
               </h4>
               <ul className="space-y-4">
                 <li>
-                  <Link
-                    href="/services/web-development"
-                    className="text-[14px] text-white/90 hover:text-[#ff6b00] transition-colors"
-                  >
+                  <span className="text-[14px] text-white/90 hover:text-[#ff6b00] transition-colors">
                     Web Development
-                  </Link>
+                  </span>
                 </li>
                 <li>
-                  <Link
-                    href="/services/wordpress-development"
-                    className="text-[14px] text-white/90 hover:text-[#ff6b00] transition-colors"
-                  >
+                  <span className="text-[14px] text-white/90 hover:text-[#ff6b00] transition-colors">
                     wordpress development
-                  </Link>
+                  </span>
                 </li>
                 <li>
-                  <Link
-                    href="/digital-marketing-institutes"
-                    className="text-[14px] text-white/90 hover:text-[#ff6b00] transition-colors"
-                  >
+                  <span className="text-[14px] text-white/90 hover:text-[#ff6b00] transition-colors">
                     Digital Marketing Institutes
-                  </Link>
+                  </span>
                 </li>
                 <li>
-                  <Link
-                    href="/privacy-policy"
-                    className="text-[14px] text-white/90 hover:text-[#ff6b00] transition-colors"
-                  >
+                  <span className="text-[14px] text-white/90 hover:text-[#ff6b00] transition-colors">
                     Privacy Policy
-                  </Link>
+                  </span>
                 </li>
                 <li>
-                  <Link
-                    href="/contact"
-                    className="text-[14px] text-white/90 hover:text-[#ff6b00] transition-colors"
-                  >
+                  <span className="text-[14px] text-white/90 hover:text-[#ff6b00] transition-colors">
                     Contact Us
-                  </Link>
+                  </span>
                 </li>
               </ul>
             </div>
@@ -427,7 +221,7 @@ export default function Footer() {
               </p>
               <Link
                 href="/about-us"
-                className="inline-flex items-center gap-2 bg-[#6BAA44] px-5 py-2.5 text-[13px] font-semibold text-white rounded transition-colors hover:bg-[#6BAA44]"
+                className="inline-flex items-center gap-2 bg-[#F90D0E] px-5 py-2.5 text-[13px] font-semibold text-white rounded transition-colors hover:bg-[#6BAA44]"
               >
                 Read More
               </Link>
@@ -438,7 +232,9 @@ export default function Footer() {
         {/* ===== Bottom Bar ===== */}
         <div className="border-t border-white/10 py-5 flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 px-6 lg:px-10">
           <p className="text-[13px] text-gray-300 text-center">
-            © {new Date().getFullYear()} {siteConfig.name ?? 'Wisdom Marketing-Digital Marketing'} | All rights reserved
+            © {new Date().getFullYear()}{' '}
+            {siteConfig.name ?? 'Wisdom Marketing-Digital Marketing'} | All
+            rights reserved
           </p>
 
           <div className="flex items-center gap-3">

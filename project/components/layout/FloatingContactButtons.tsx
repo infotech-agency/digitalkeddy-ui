@@ -1,22 +1,8 @@
 "use client"
 import { useState } from "react";
 import { Phone } from "lucide-react";
+import Image from "next/image";
 
-/**
- * FloatingContactButtons
- * -------------------------------------------------------------
- * Fixed floating WhatsApp + Call buttons, bottom-right corner.
- * Convention-following on purpose — people scan the bottom-right
- * corner for this pattern, so it stays there rather than trying
- * to be clever about placement.
- *
- * Usage:
- *   import FloatingContactButtons from "@/components/common/FloatingContactButtons";
- *   <FloatingContactButtons
- *     whatsappNumber="911234567890"   // country code, no + or spaces
- *     phoneNumber="+911234567890"
- *   />
- */
 
 interface Props {
   whatsappNumber: string; // digits only, with country code, e.g. "911234567890"
@@ -67,9 +53,10 @@ export default function FloatingContactButtons({
         >
           Chat on WhatsApp
         </span>
-        {/* <span className="absolute inset-0 -m-1 rounded-full bg-[#25D366] opacity-60 animate-ping" /> */}
-        <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl shadow-black/20 transition-transform duration-200 group-hover:scale-105">
-          <WhatsAppIcon className="h-7 w-7" />
+       
+        <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-white text-white shadow-xl shadow-black/20 transition-transform duration-200 group-hover:scale-105">
+          {/* <WhatsAppIcon className="h-7 w-7" /> */}
+          <Image alt="wtsapp" height={50} width={50} src={'https://www.freeiconspng.com/thumbs/logo-whatsapp-png/logo-whatsapp-png-image-2.png'}/>
         </span>
       </a>
 
@@ -88,7 +75,7 @@ export default function FloatingContactButtons({
         >
           Call us now
         </span>
-        <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#F43F5E] text-white shadow-xl shadow-black/20 transition-transform duration-200 group-hover:scale-105">
+        <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#F90D0E] text-white shadow-xl shadow-black/20 transition-transform duration-200 group-hover:scale-105">
           <Phone className="h-6 w-6" strokeWidth={2} />
         </span>
       </a>

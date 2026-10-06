@@ -158,25 +158,25 @@ function renderHeadElements(nodes: HeadNode[], keyPrefix: string) {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://infotechagency.in'),
+  metadataBase: new URL('https://digitalkeddy.in'),
   title: {
-    default: 'Infotech Agency | Digital Marketing, SEO & Web Development',
-    template: '%s | Infotech Agency',
+    default: 'DigitalKeddy | Digital Marketing, SEO & Web Development',
+    template: '%s | DigitalKeddy',
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/svg/favicon.ico",
   },
   alternates: {
     canonical: '/',
   },
-    openGraph: {
-    siteName: "Infotech Agency",
-    title: "Infotech Agency",
-    url: "https://infotechagency.in",
+  openGraph: {
+    siteName: "DigitalKeddy",
+    title: "DigitalKeddy",
+    url: "https://digitalkeddy.in",
     type: "website",
   },
   description:
-    'Infotech Agency is a full-service digital marketing agency delivering SEO, PPC, web development, content marketing, and social media strategies.',
+    'DigitalKeddy is a full-service digital marketing agency delivering SEO, PPC, web development, content marketing, and social media strategies.',
 };
 
 export default async function RootLayout({

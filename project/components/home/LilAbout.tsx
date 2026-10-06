@@ -66,14 +66,14 @@ export default function AboutSection() {
 
           {/* Right: content */}
           <div>
-            <p className="text-[0.85rem] font-medium uppercase tracking-wider text-[#6BAB44] sm:text-sm">
-              About Infotech Agency
+            <p className="text-[0.85rem] font-medium uppercase tracking-wider text-[#E10600] sm:text-sm">
+              About Digitalkeddy
             </p>
             <h2 className="mt-3 text-2xl font-semibold leading-tight text-gray-900 sm:text-3xl md:text-4xl">
               Comprehensive Solutions for All Your Digital Business Needs
             </h2>
             <p className="mt-5 text-[0.95rem] leading-relaxed text-gray-700 sm:text-base">
-              Touchstone Infotech is an award-winning company that offers a
+              Digitalkeddy is an award-winning company that offers a
               wide range of digital solutions to help you accomplish your
               goals. Our skilled team has expertise in web design, search
               engine optimization (SEO), pay-per-click (PPC) advertising,
@@ -90,7 +90,7 @@ export default function AboutSection() {
                     i !== 0 ? "border-t border-gray-200 pt-6" : ""
                   }`}
                 >
-                  <div className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-[#6BAB44]">
+                  <div className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-[#E10600]">
                     <Icon className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -106,19 +106,20 @@ export default function AboutSection() {
             </div>
 
             <div className="mt-9 flex flex-wrap items-center gap-6">
-              <button className="inline-flex items-center gap-2 rounded bg-rose-500 px-6 py-3 text-[0.9rem] font-semibold text-white transition-colors hover:bg-rose-600">
+              <button className="inline-flex items-center gap-2 rounded bg-[#E10600] px-6 py-3 text-[0.9rem] font-semibold text-white transition-colors hover:bg-[#B91C1C]">
                 Discover More
                 <ArrowRight className="h-4 w-4" />
               </button>
 
               <div className="flex items-center gap-3">
-                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-rose-500">
+                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-[#E10600]">
                   <Phone className="h-5 w-5 text-white" />
                 </span>
                 <div className="text-[0.9rem]">
                   <p className="text-gray-500">Call anytime</p>
                   <p className="font-semibold text-gray-900">
-                    +91 8587 999 666
+                    +91 96253 50146
+
                   </p>
                 </div>
               </div>
