@@ -252,7 +252,7 @@ export default function CareersContent() {
     <>
       <PageHero
         breadcrumb="Careers"
-        title="Build Your Career at Infotech Agency"
+        title="Build Your Career at DigitalKeddy"
         description="We are a team of senior strategists, engineers, and creatives who love what we do. If you are passionate about digital marketing and want to work on meaningful campaigns for real brands, we want to meet you."
         image="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
       />
@@ -263,7 +263,7 @@ export default function CareersContent() {
           <SectionHeading
             eyebrow="Why Join Us"
             title="A Place Where You Can Grow"
-            description="We invest in our people because our people are our product. Here is what makes Infotech Agency a great place to build your career."
+            description="We invest in our people because our people are our product. Here is what makesDigitalKeddy a great place to build your career."
           />
           <Stagger className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4" stagger={0.08}>
             {perks.map((perk) => {
@@ -815,7 +815,7 @@ export default function CareersContent() {
                       value={form.coverLetter}
                       onChange={handleChange}
                       className="w-full rounded-xl border border-border bg-white px-4 py-3 text-brand focus:border-electric focus:outline-none"
-                      placeholder="Tell us about yourself, your experience, and why you want to join Infotech Agency..."
+                      placeholder="Tell us about yourself, your experience, and why you want to joinDigitalKeddy..."
                       disabled={isSubmitting}
                     />
                   </div>

@@ -4,7 +4,7 @@ import ContactContent from '@/components/contact/ContactContent';
 export const metadata: Metadata = {
   title: 'Contact Us | Get Your Free Marketing Proposal',
   description:
-    'Get in touch with Infotech Agency for a free, no-obligation digital marketing proposal tailored to your business goals.',
+    'Get in touch with DigitalKeddy for a free, no-obligation digital marketing proposal tailored to your business goals.',
   alternates: { canonical: '/contact' },
 };
 

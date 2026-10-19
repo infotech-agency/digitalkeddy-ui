@@ -14,7 +14,7 @@ import Achievements from '@/components/home/Achievements';
 export const metadata: Metadata = {
   title: 'About Us | Our Story & Mission',
   description:
-    'Learn about Infotech Agency — a full-service digital marketing agency with 12+ years of experience helping 500+ brands grow.',
+    'Learn about DigitalKeddy — a full-service digital marketing agency with 12+ years of experience helping 500+ brands grow.',
   alternates: { canonical: '/about-us' },
 };
 
@@ -54,7 +54,7 @@ export default function AboutPage() {
       <PageHero
         breadcrumb="About Us"
         title="We Help Brands Grow with Data-Driven Marketing"
-        description="For over 12 years, Infotech Agency has been the growth partner of choice for 500+ brands — from startups to enterprises — across 30+ industries."
+        description="For over 12 years,DigitalKeddy has been the growth partner of choice for 500+ brands — from startups to enterprises — across 30+ industries."
         image="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
       />
 
@@ -72,7 +72,7 @@ export default function AboutPage() {
               </h2>
               <div className="mt-5 space-y-4 text-base leading-relaxed text-muted-foreground">
                 <p>
-                  Infotech Agency was founded in 2013 with a simple belief: digital
+                 DigitalKeddy was founded in 2013 with a simple belief: digital
                   marketing should be measured by revenue, not vanity metrics. What
                   started as a 3-person SEO consultancy has grown into a 50+ person
                   full-service agency trusted by brands across 30+ industries.
@@ -94,7 +94,7 @@ export default function AboutPage() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-premium-lg">
                 <Image
                   src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-                  alt="Infotech Agency team"
+                  alt="DigitalKeddy team"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"

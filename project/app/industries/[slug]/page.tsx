@@ -92,11 +92,11 @@
 //   if (!industry) return {};
   
 //   return {
-//     title: industry.metaTitle || `${industry.title} | Infotech Agency`,
+//     title: industry.metaTitle || `${industry.title} |DigitalKeddy`,
 //     description: industry.metaDescription || industry.overview,
 //     alternates: { canonical: `/industries/${industry.slug}` },
 //     openGraph: {
-//       title: industry.metaTitle || `${industry.title} | Infotech Agency`,
+//       title: industry.metaTitle || `${industry.title} |DigitalKeddy`,
 //       description: industry.metaDescription || industry.overview,
 //       url: `https://infotechagency.com/industries/${industry.slug}`,
 //       images: [{ 
@@ -171,7 +171,7 @@ export async function generateMetadata({
   if (!industry) return {};
   
   // Agar backend se metaTitle na aaye, toh fallback me main title use hoga
-  const title = industry.metaTitle || `${industry.title} | Infotech Agency`;
+  const title = industry.metaTitle || `${industry.title} |DigitalKeddy`;
   const description = industry.metaDescription || industry.overview;
 
   return {

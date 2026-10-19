@@ -22,7 +22,7 @@
 //       <PageHero
 //         breadcrumb="Testimonials"
 //         title="Client Stories of Growth"
-//         description="We measure our success by our clients' success. Here is what they have to say about partnering with Infotech Agency."
+//         description="We measure our success by our clients' success. Here is what they have to say about partnering withDigitalKeddy."
 //         image="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
 //       />
 
@@ -32,7 +32,7 @@
 //           <SectionHeading
 //             eyebrow="Video Testimonials"
 //             title="Hear It from Our Clients"
-//             description="Watch our clients share their experience of working with Infotech Agency."
+//             description="Watch our clients share their experience of working withDigitalKeddy."
 //           />
 //           <Stagger className="mt-14 grid gap-6 lg:grid-cols-3" stagger={0.1}>
 //             {videoTestimonials.map((t) => (
@@ -206,7 +206,7 @@ export default function TestimonialsContent() {
         <PageHero
           breadcrumb="Testimonials"
           title="Client Stories of Growth"
-          description="We measure our success by our clients' success. Here is what they have to say about partnering with Infotech Agency."
+          description="We measure our success by our clients' success. Here is what they have to say about partnering withDigitalKeddy."
           image="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
         />
         <section className="bg-white py-20 lg:py-28">
@@ -260,7 +260,7 @@ export default function TestimonialsContent() {
         <PageHero
           breadcrumb="Testimonials"
           title="Client Stories of Growth"
-          description="We measure our success by our clients' success. Here is what they have to say about partnering with Infotech Agency."
+          description="We measure our success by our clients' success. Here is what they have to say about partnering withDigitalKeddy."
           image="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
         />
         <section className="bg-white py-20 lg:py-28">
@@ -288,7 +288,7 @@ export default function TestimonialsContent() {
       <PageHero
         breadcrumb="Testimonials"
         title="Client Stories of Growth"
-        description="We measure our success by our clients' success. Here is what they have to say about partnering with Infotech Agency."
+        description="We measure our success by our clients' success. Here is what they have to say about partnering withDigitalKeddy."
         image="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
       />
 

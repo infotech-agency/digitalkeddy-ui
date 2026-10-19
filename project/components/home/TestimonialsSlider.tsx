@@ -112,7 +112,7 @@ export default function TestimonialsSlider() {
         <SectionHeading
           dark
           title="What Our Clients Say"
-          description="We measure our success by our clients' success. Here is what they have to say about working with Infotech Agency."
+          description="We measure our success by our clients' success. Here is what they have to say about working with DigitalKeddy."
         />
 
         {/* Custom swiper CSS (white bullets on red bg, red arrows on white buttons) */}

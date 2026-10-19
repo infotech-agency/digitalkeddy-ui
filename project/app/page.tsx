@@ -2,18 +2,17 @@ import Hero from '@/components/home/Hero';
 import TrustedBy from '@/components/home/TrustedBy';
 import Achievements from '@/components/home/Achievements';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
-import IndustryExpertise from '@/components/home/IndustryExpertise';
 import FeaturedCaseStudies from '@/components/home/FeaturedCaseStudies';
 import TestimonialsSlider from '@/components/home/TestimonialsSlider';
-import Process from '@/components/home/Process';
 import LatestBlogs from '@/components/home/LatestBlogs';
 import HomeFAQ from '@/components/home/HomeFAQ';
 import Technologies from '@/components/home/Technologies';
-import CareersCta from '@/components/home/Careercta';
 import LilAbout from '@/components/home/LilAbout';
 import SmartStrategiesSection from '@/components/sections/Smartstrategiessection';
 import FloatingContactButtons from '@/components/layout/FloatingContactButtons';
 import CircularCarousel from '@/components/animation/CircularCarouselItem';
+import ServicesSection from '@/components/home/Servicessection';
+import QuickProposalForm from '@/components/home/QuickProposalForm';
 
 
 export default function HomePage() {
@@ -111,8 +110,9 @@ export default function HomePage() {
 </div>
 
       <TrustedBy />
-
+      <QuickProposalForm/>
       <Achievements />
+      <ServicesSection/>
       <SmartStrategiesSection/>
       {/* <ScrollStack cards={cards}/> */}
       <LilAbout/>

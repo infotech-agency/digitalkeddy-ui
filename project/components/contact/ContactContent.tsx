@@ -267,7 +267,7 @@
 //           <SectionHeading
 //             eyebrow="FAQ"
 //             title="Contact FAQs"
-//             description="Quick answers to common questions about getting started with Infotech Agency."
+//             description="Quick answers to common questions about getting started withDigitalKeddy."
 //           />
 //           <div className="mt-14">
 //             <FAQAccordion items={contactFaqs} />
@@ -714,7 +714,7 @@ export default function ContactContent() {
           <SectionHeading
             eyebrow="FAQ"
             title="Contact FAQs"
-            description="Quick answers to common questions about getting started with Infotech Agency."
+            description="Quick answers to common questions about getting started with DigitalKeddy."
           />
           <div className="mt-14">
             <FAQAccordion items={contactFaqs} />

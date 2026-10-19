@@ -200,7 +200,7 @@ export const HangingIdCard = ({
                 style={{ background: `linear-gradient(135deg, ${accentColor} 0%, #3758f9 100%)` }}
               >
                 <p className="text-[9px] font-bold tracking-[0.25em] text-white/70 uppercase">
-                  Infotech Agency
+                 DigitalKeddy
                 </p>
                 <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm mt-1 shadow-inner">
                   <Image

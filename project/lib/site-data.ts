@@ -1,9 +1,9 @@
 export const siteConfig = {
-  name: 'Infotech Agency',
+  name: 'DigitalKeddy',
   tagline: 'Digital Marketing That Drives Measurable Growth',
   description:
-    'Infotech Agency is a full-service digital marketing agency delivering SEO, PPC, web development, content marketing, and social media strategies that drive measurable growth for enterprise brands.',
-  url: 'https://infotechagency.com',
+    'DigitalKeddy is a full-service digital marketing agency delivering SEO, PPC, web development, content marketing, and social media strategies that drive measurable growth for enterprise brands.',
+  url: 'https://digitalkeddy.com',
   email: 'hello@infotechagency.com',
   phone: '+91 98765 43210',
   address: 'Level 12, Cyber Towers, HITEC City, Hyderabad, Telangana 500081, India',
@@ -259,7 +259,7 @@ export const awards = [
 
 export const homeFaqs = [
   {
-    question: 'What services does Infotech Agency offer?',
+    question: 'What services doesDigitalKeddy offer?',
     answer:
       'We are a full-service digital marketing agency offering SEO, PPC/paid marketing, web development, content marketing, social media marketing, and integrated digital marketing strategy. You can engage us for one channel or all of them.',
   },

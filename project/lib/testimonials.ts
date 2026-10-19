@@ -17,7 +17,7 @@ export const testimonials: Testimonial[] = [
       'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
     rating: 5,
     quote:
-      'Infotech Agency transformed our online presence. Within 8 months, our organic traffic grew 320% and online sales doubled. They are an extension of our team, not just a vendor.',
+      'DigitalKeddy transformed our online presence. Within 8 months, our organic traffic grew 320% and online sales doubled. They are an extension of our team, not just a vendor.',
     video: true,
   },
   {
@@ -38,7 +38,7 @@ export const testimonials: Testimonial[] = [
       'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
     rating: 5,
     quote:
-      'We sold out a 120-unit project in 8 months — 340% ROI on ad spend. Infotech Agency’s hyper-local SEO and lead nurture system are unmatched in real estate.',
+      'We sold out a 120-unit project in 8 months — 340% ROI on ad spend.DigitalKeddy’s hyper-local SEO and lead nurture system are unmatched in real estate.',
     video: true,
   },
   {
@@ -69,7 +69,7 @@ export const testimonials: Testimonial[] = [
       'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
     rating: 5,
     quote:
-      'As a law firm, we were cautious about marketing. Infotech Agency built a compliant strategy that doubled our case inquiries without ever crossing bar guidelines.',
+      'As a law firm, we were cautious about marketing.DigitalKeddy built a compliant strategy that doubled our case inquiries without ever crossing bar guidelines.',
   },
   {
     name: 'Karan Malhotra',
