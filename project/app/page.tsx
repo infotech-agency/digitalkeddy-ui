@@ -11,7 +11,7 @@ import LilAbout from '@/components/home/LilAbout';
 import SmartStrategiesSection from '@/components/sections/Smartstrategiessection';
 import FloatingContactButtons from '@/components/layout/FloatingContactButtons';
 import CircularCarousel from '@/components/animation/CircularCarouselItem';
-import ServicesSection from '@/components/home/Servicessection';
+import ServicesSection from '@/components/home/ServicesSection';
 import QuickProposalForm from '@/components/home/QuickProposalForm';
 
 
