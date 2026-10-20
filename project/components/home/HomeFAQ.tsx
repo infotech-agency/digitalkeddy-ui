@@ -114,7 +114,7 @@ export default function HomeFAQ() {
         <SectionHeading
           eyebrow="FAQ"
           title="Frequently Asked Questions"
-          description="Everything you need to know about working with Infotech Agency. Still have questions? Reach out — we are happy to help."
+          description="Everything you need to know about working with DigitalKeddy. Still have questions? Reach out — we are happy to help."
         />
         <div className="mt-14 text-center">
           <p className="text-muted-foreground">
@@ -138,7 +138,7 @@ export default function HomeFAQ() {
       <SectionHeading
         eyebrow="FAQ"
         title="Frequently Asked Questions"
-        description="Everything you need to know about working with Infotech Agency. Still have questions? Reach out — we are happy to help."
+        description="Everything you need to know about working with DigitalKeddy. Still have questions? Reach out — we are happy to help."
       />
 
       <div className="mt-14 flex flex-col gap-8 lg:flex-row">

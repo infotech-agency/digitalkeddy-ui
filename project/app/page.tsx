@@ -13,6 +13,8 @@ import FloatingContactButtons from '@/components/layout/FloatingContactButtons';
 import CircularCarousel from '@/components/animation/CircularCarouselItem';
 import ServicesSection from '@/components/home/ServicesSection';
 import QuickProposalForm from '@/components/home/QuickProposalForm';
+import PortfolioContent from '@/components/portfolio/PortfolioContent';
+import PortfolioSection from '@/components/portfolio/PortfolioSection';
 
 
 export default function HomePage() {
@@ -111,7 +113,7 @@ export default function HomePage() {
 
       <TrustedBy />
       <QuickProposalForm/>
-      <Achievements />
+      {/* <Achievements /> */}
       <ServicesSection/>
       <SmartStrategiesSection/>
       {/* <ScrollStack cards={cards}/> */}
@@ -119,7 +121,8 @@ export default function HomePage() {
       <WhyChooseUs />
       {/* <ServicesGrid /> */}
       {/* <IndustryExpertise /> */}
-      <FeaturedCaseStudies />
+      {/* <FeaturedCaseStudies /> */}
+      <PortfolioSection/>
       <TestimonialsSlider />
       {/* <Process /> */}
       {/* <ResultsStats /> */}
@@ -127,7 +130,7 @@ export default function HomePage() {
       {/* <TeamPreview /> */}
       {/* <AwardsRecognition /> */}
       {/* <Delhi/> */}
-      <LatestBlogs />
+      {/* <LatestBlogs /> */}
       <HomeFAQ />
       <Technologies/>
       
