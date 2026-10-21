@@ -6,6 +6,7 @@ import FeaturedCaseStudies from '@/components/home/FeaturedCaseStudies';
 import TestimonialsSlider from '@/components/home/TestimonialsSlider';
 import LatestBlogs from '@/components/home/LatestBlogs';
 import HomeFAQ from '@/components/home/HomeFAQ';
+
 import Technologies from '@/components/home/Technologies';
 import LilAbout from '@/components/home/LilAbout';
 import SmartStrategiesSection from '@/components/sections/Smartstrategiessection';
@@ -17,6 +18,7 @@ import PortfolioContent from '@/components/portfolio/PortfolioContent';
 import PortfolioSection from '@/components/portfolio/PortfolioSection';
 import CTABanner from '@/components/common/CTABanner';
 import Process from '@/components/home/Process';
+import dynamic from 'next/dynamic';
 
 
 export default function HomePage() {
