@@ -201,7 +201,7 @@ export default function TestimonialsSlider() {
                   <div className="flex items-center gap-4">
                     <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-[#E10600]/20 ring-offset-2 ring-offset-white transition-all duration-500 group-hover:ring-[#E10600]/60">
                       <Image
-                        src={testimonial.photo?.secure_url}
+                        src={testimonial.photo?.secure_url || "https://static.vecteezy.com/system/resources/previews/021/548/095/non_2x/default-profile-picture-avatar-user-avatar-icon-person-icon-head-icon-profile-picture-icons-default-anonymous-user-male-and-female-businessman-photo-placeholder-social-network-avatar-portrait-free-vector.jpg"}
                         alt={testimonial.clientName}
                         fill
                         className="object-cover"

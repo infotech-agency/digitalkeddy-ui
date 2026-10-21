@@ -1,80 +1,81 @@
 
 
 // import Link from 'next/link';
-// import { ArrowRight, PhoneCall } from 'lucide-react';
+// import Image from 'next/image';
 // import { Reveal } from '@/components/common/Reveal';
-// import { siteConfig } from '@/lib/site-data';
+
+// /**
+//  * Pattern background (data URI, no extra asset file needed).
+//  * Soft coral base with overlapping circle-arc texture, matching
+//  * the reference design.
+//  */
+// const BG_SVG = `data:image/svg+xml;utf8,${encodeURIComponent(`
+// <svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'>
+//   <rect width='120' height='120' fill='#F7A8B8'/>
+//   <g fill='none' stroke='#F2809A' stroke-width='2' opacity='0.5'>
+//     <circle cx='0' cy='0' r='40'/>
+//     <circle cx='120' cy='120' r='40'/>
+//     <circle cx='120' cy='0' r='40'/>
+//     <circle cx='0' cy='120' r='40'/>
+//     <circle cx='60' cy='60' r='40'/>
+//   </g>
+// </svg>
+// `)}`;
 
 // export default function CTABanner({
-//   title = 'Ready to Grow Your Business?',
-//   description = 'Get a free, no-obligation proposal tailored to your goals. Our team will audit your current presence and build a roadmap to measurable growth.',
-//   buttonText = 'Get Free Proposal',
-//   secondaryText = 'Talk to an Expert',
+//   eyebrow = "Let's Work Together",
+//   title = 'Need a Successful Project?',
+//   buttonText = 'Contact Us',
+//   buttonHref = '/contact',
+//   illustrationSrc = '/images/success.png',
 // }: {
+//   eyebrow?: string;
 //   title?: string;
-//   description?: string;
 //   buttonText?: string;
-//   secondaryText?: string;
+//   buttonHref?: string;
+//   illustrationSrc?: string;
 // }) {
 //   return (
-//     <section className="relative overflow-hidden bg-brand py-24 lg:py-32">
-//       {/* ── Premium Background: Sharp Box Grid + Mesh Glow ── */}
-//       <div className="pointer-events-none absolute inset-0 z-0">
-//         {/* Sharp CSS Grid (Subtle white lines) */}
-//         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] [background-size:48px_48px] opacity-40" />
-        
-//         {/* Ocean Glow (Top Left) */}
-//         <div className="absolute -left-40 -top-40 h-[600px] w-[600px] rounded-full bg-ocean/30 blur-[120px]" />
-//         {/* Leaf Glow (Bottom Right) */}
-//         <div className="absolute -right-40 bottom-0 h-[600px] w-[600px] rounded-full bg-leaf/20 blur-[120px]" />
-//       </div>
-
-//       {/* Top & Bottom Sharp Accent Lines (Frames the section beautifully) */}
-//       <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-ocean via-electric to-leaf"></div>
-//       <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-ocean via-electric to-leaf"></div>
-
+//     <section
+//       style={{
+//         backgroundColor: '#F7A8B8',
+//         backgroundImage: `url("${BG_SVG}")`,
+//         backgroundRepeat: 'repeat',
+//         backgroundSize: '120px 120px',
+//       }}
+//       className="relative overflow-hidden py-20 lg:py-28"
+//     >
 //       <div className="container relative z-10 mx-auto px-4">
-//         <Reveal className="mx-auto max-w-4xl text-center">
-          
-//           {/* Small Accent Block */}
-//           <div className="mx-auto mb-6 h-1 w-12 bg-electric" />
-
-//           <h2 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
-//             {title}
-//           </h2>
-          
-//           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
-//             {description}
+//         <Reveal className="mx-auto max-w-2xl text-center">
+//           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-brand/70">
+//             {eyebrow}
 //           </p>
 
-//           {/* Sharp CTAs */}
-//           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            
-//             {/* Primary Button - Slide-up fill effect */}
+//           <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-brand sm:text-4xl lg:text-5xl">
+//             {title}
+//           </h2>
+
+//           <div className="mt-8 flex justify-center">
 //             <Link
-//               href="/contact"
-//               className="group relative inline-flex items-center justify-center gap-2 overflow-hidden bg-white px-8 py-4 text-base font-extrabold text-brand shadow-[0_10px_30px_-5px_rgba(0,0,0,0.4)] transition-all hover:shadow-[0_15px_40px_-5px_rgba(0,0,0,0.5)]"
+//               href={buttonHref}
+//               className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-bold text-brand shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5 hover:shadow-xl"
 //             >
-//               {/* Slide-up ocean fill on hover */}
-//               <span className="absolute inset-0 -translate-y-full bg-ocean transition-transform duration-300 group-hover:translate-y-0"></span>
-//               <span className="relative flex items-center gap-2 transition-colors duration-300 group-hover:text-white">
-//                 {buttonText}
-//                 <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-//               </span>
+//               {buttonText}
 //             </Link>
-            
-//             {/* Secondary Button - Glassmorphism with sharp icon box */}
-//             <a
-//               href={`tel:${siteConfig.phone}`}
-//               className="group inline-flex items-center justify-center gap-3 border-2 border-white/20 bg-white/5 px-8 py-4 text-base font-bold text-white backdrop-blur-sm transition-all hover:border-white/60 hover:bg-white/10"
-//             >
-//               <span className="flex h-7 w-7 items-center justify-center bg-white/10 transition-colors duration-300 group-hover:bg-leaf group-hover:text-brand">
-//                 <PhoneCall className="h-3.5 w-3.5" />
-//               </span>
-//               {secondaryText}
-//             </a>
 //           </div>
 //         </Reveal>
+
+//         {/* Illustration */}
+//         <div className="relative mx-auto mt-12 max-w-3xl">
+//           <Image
+//             src={illustrationSrc}
+//             alt=""
+//             width={1200}
+//             height={500}
+//             className="h-auto w-full object-contain"
+//             priority={false}
+//           />
+//         </div>
 //       </div>
 //     </section>
 //   );
@@ -84,78 +85,104 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Reveal } from '@/components/common/Reveal';
 
-/**
- * Pattern background (data URI, no extra asset file needed).
- * Soft coral base with overlapping circle-arc texture, matching
- * the reference design.
- */
-const BG_SVG = `data:image/svg+xml;utf8,${encodeURIComponent(`
-<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'>
-  <rect width='120' height='120' fill='#F7A8B8'/>
-  <g fill='none' stroke='#F2809A' stroke-width='2' opacity='0.5'>
-    <circle cx='0' cy='0' r='40'/>
-    <circle cx='120' cy='120' r='40'/>
-    <circle cx='120' cy='0' r='40'/>
-    <circle cx='0' cy='120' r='40'/>
-    <circle cx='60' cy='60' r='40'/>
-  </g>
-</svg>
-`)}`;
+const CONTACTS = [
+  {
+    label: 'Email Us',
+    value: 'info@digitalkeddy.in',
+    href: 'mailto:info@digitalkeddy.in',
+  },
+  {
+    label: 'Phone',
+    value: '96253 50146',
+    href: 'tel:+919625350146',
+  },
+  {
+    label: 'WhatsApp',
+    value: '96253 50146',
+    href: 'https://wa.me/919625350146',
+  },
+];
 
 export default function CTABanner({
-  eyebrow = "Let's Work Together",
-  title = 'Need a Successful Project?',
-  buttonText = 'Contact Us',
-  buttonHref = '/contact',
+  title = 'Let Us Discuss Your Next Stage of Growth',
+  text = 'Tell us about your business and the customers you want to reach. We will help you identify a practical starting point for your digital marketing.',
+  primaryText = 'Get My Free Marketing Plan',
+  primaryHref = '/contact',
+  secondaryText = 'Call Digital Keddy',
+  secondaryHref = 'tel:+919625350146',
   illustrationSrc = '/images/success.png',
 }: {
-  eyebrow?: string;
   title?: string;
-  buttonText?: string;
-  buttonHref?: string;
+  text?: string;
+  primaryText?: string;
+  primaryHref?: string;
+  secondaryText?: string;
+  secondaryHref?: string;
   illustrationSrc?: string;
 }) {
   return (
-    <section
-      style={{
-        backgroundColor: '#F7A8B8',
-        backgroundImage: `url("${BG_SVG}")`,
-        backgroundRepeat: 'repeat',
-        backgroundSize: '120px 120px',
-      }}
-      className="relative overflow-hidden py-20 lg:py-28"
-    >
+    <section className="relative overflow-hidden bg-[#F7A8B8] py-20 lg:py-28">
       <div className="container relative z-10 mx-auto px-4">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-brand/70">
-            {eyebrow}
-          </p>
-
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-brand sm:text-4xl lg:text-5xl">
             {title}
           </h2>
 
-          <div className="mt-8 flex justify-center">
+          <p className="mt-4 text-base leading-relaxed text-brand/80 sm:text-lg">
+            {text}
+          </p>
+
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
-              href={buttonHref}
+              href={primaryHref}
               className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-bold text-brand shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5 hover:shadow-xl"
             >
-              {buttonText}
+              {primaryText}
             </Link>
+            <a
+              href={secondaryHref}
+              className="inline-flex items-center justify-center rounded-full border-2 border-brand px-8 py-3 text-sm font-bold text-brand transition-colors hover:bg-brand hover:text-white"
+            >
+              {secondaryText}
+            </a>
           </div>
         </Reveal>
 
-        {/* Illustration */}
-        <div className="relative mx-auto mt-12 max-w-3xl">
-          <Image
-            src={illustrationSrc}
-            alt=""
-            width={1200}
-            height={500}
-            className="h-auto w-full object-contain"
-            priority={false}
-          />
-        </div>
+        {/* Contact details */}
+        <ul className="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-3">
+          {CONTACTS.map((c) => (
+            <li
+              key={c.label}
+              className="rounded-2xl bg-white/70 px-5 py-4 text-center backdrop-blur-sm"
+            >
+              <p className="text-xs font-bold uppercase tracking-[0.15em] text-brand/70">
+                {c.label} :
+              </p>
+              <a
+                href={c.href}
+                {...(c.label === 'WhatsApp'
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
+                className="mt-1 block break-words text-base font-semibold text-brand hover:underline"
+              >
+                {c.value}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* Illustration (optional) */}
+        {illustrationSrc && (
+          <div className="relative mx-auto mt-12 max-w-3xl">
+            <Image
+              src={illustrationSrc}
+              alt=""
+              width={1200}
+              height={500}
+              className="h-auto w-full object-contain"
+            />
+          </div>
+        )}
       </div>
     </section>
   );

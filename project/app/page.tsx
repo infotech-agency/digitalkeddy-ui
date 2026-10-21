@@ -15,6 +15,8 @@ import ServicesSection from '@/components/home/ServicesSection';
 import QuickProposalForm from '@/components/home/QuickProposalForm';
 import PortfolioContent from '@/components/portfolio/PortfolioContent';
 import PortfolioSection from '@/components/portfolio/PortfolioSection';
+import CTABanner from '@/components/common/CTABanner';
+import Process from '@/components/home/Process';
 
 
 export default function HomePage() {
@@ -72,69 +74,92 @@ export default function HomePage() {
 
 ];
 
-  return (
+//   return (
+//     <>
+//       <FloatingContactButtons
+//       whatsappNumber="919625350146"   // country code, no + ya spaces
+//   phoneNumber="+919625350146"
+//       />
+//       <Hero />
+
+//       {/* <WmeStyleHero/> */}
+//       <div style={{ width: '100%', height: '560px', position: 'relative' }}>
+//   <CircularCarousel
+//     items={items}
+//     preset="cylinder"
+//     intro="rise"
+//     cardWidth={220}
+//     aspectRatio={1}
+//     speed={14}
+//     captions={false}
+//     gap={25}
+//     tilt={-5}
+//     curve={1}
+//     perspective={2500}
+//     autoplay="drift"
+//     interval={3}
+//     direction="left"
+//     momentum={0.6}
+//     snap
+//     pauseOnHover
+//     focusOnClick
+//     draggable
+//     parallax={0.3}
+//     stretch={0.5}
+//     fadeColor="#000000"
+//     depthFade={0.55}
+//     innerShade={0.6}
+//     cornerRadius={12}
+// />
+// </div>
+
+//       <TrustedBy />
+     
+//       {/* <Achievements /> */}
+//       <ServicesSection/>
+//       <SmartStrategiesSection/>
+//       {/* <ScrollStack cards={cards}/> */}
+//       <LilAbout/>
+//       <WhyChooseUs />
+//       {/* <ServicesGrid /> */}
+//       {/* <IndustryExpertise /> */}
+//       {/* <FeaturedCaseStudies /> */}
+//       <PortfolioSection/>
+//       <TestimonialsSlider />
+//       {/* <Process /> */}
+//       {/* <ResultsStats /> */}
+//       {/* <MarketingSolutions /> */}
+//       {/* <TeamPreview /> */}
+//       {/* <AwardsRecognition /> */}
+//       {/* <Delhi/> */}
+//       {/* <LatestBlogs /> */}
+//       <HomeFAQ />
+//       <Technologies/>
+      
+//       {/* <CTABanner /> */}
+//     </>
+//   );
+
+
+return (
     <>
       <FloatingContactButtons
-      whatsappNumber="919625350146"   // country code, no + ya spaces
-  phoneNumber="+919625350146"
+        whatsappNumber="919625350146"
+        phoneNumber="+919625350146"
       />
-      <Hero />
-
-      {/* <WmeStyleHero/> */}
-      <div style={{ width: '100%', height: '560px', position: 'relative' }}>
-  <CircularCarousel
-    items={items}
-    preset="cylinder"
-    intro="rise"
-    cardWidth={220}
-    aspectRatio={1}
-    speed={14}
-    captions={false}
-    gap={25}
-    tilt={-5}
-    curve={1}
-    perspective={2500}
-    autoplay="drift"
-    interval={3}
-    direction="left"
-    momentum={0.6}
-    snap
-    pauseOnHover
-    focusOnClick
-    draggable
-    parallax={0.3}
-    stretch={0.5}
-    fadeColor="#000000"
-    depthFade={0.55}
-    innerShade={0.6}
-    cornerRadius={12}
-/>
-</div>
-
-      <TrustedBy />
-      <QuickProposalForm/>
-      {/* <Achievements /> */}
-      <ServicesSection/>
-      <SmartStrategiesSection/>
-      {/* <ScrollStack cards={cards}/> */}
-      <LilAbout/>
+      <Hero />              {/* H1 + CTA + form with id="get-proposal" */}
+      <TrustedBy />    
+      <QuickProposalForm/>     {/* real logos only */}
+      <ServicesSection />   {/* one services section only */}
+      <PortfolioSection />  {/* verified case studies only */}
+      <LilAbout />          {/* Malviya Nagar / South Delhi section */}
       <WhyChooseUs />
-      {/* <ServicesGrid /> */}
-      {/* <IndustryExpertise /> */}
-      {/* <FeaturedCaseStudies /> */}
-      <PortfolioSection/>
-      <TestimonialsSlider />
-      {/* <Process /> */}
-      {/* <ResultsStats /> */}
-      {/* <MarketingSolutions /> */}
-      {/* <TeamPreview /> */}
-      {/* <AwardsRecognition /> */}
-      {/* <Delhi/> */}
-      {/* <LatestBlogs /> */}
+      <Process />           {/* build this: How We Work */}
+      <TestimonialsSlider />{/* hide until real reviews are ready */}
       <HomeFAQ />
-      <Technologies/>
-      
-      {/* <CTABanner /> */}
+      <CTABanner />         {/* final CTA */}
     </>
   );
+
+
 }
