@@ -1,3 +1,5 @@
+
+
 // 'use client';
 
 // import { useState } from 'react';
@@ -80,7 +82,7 @@
 
 //       setSubmitted(true);
 //       setForm(initialForm);
-//       setTimeout(() => setSubmitted(false), 5000);
+//       // No timeout: the thank-you message stays in place of the form
 //     } catch (err) {
 //       setError(
 //         err instanceof Error ? err.message : 'Something went wrong. Please try again.'
@@ -98,130 +100,130 @@
 //     <div
 //       className={`rounded-3xl border border-border bg-sky p-8 shadow-premium lg:p-10 ${className}`}
 //     >
-//       <h2 className="text-2xl font-bold text-brand sm:text-3xl">{title}</h2>
-//       <p className="mt-3 text-base text-muted-foreground">{description}</p>
-
-//       {/* Success Message */}
-//       {submitted && (
-//         <div className="mt-6 flex items-center gap-3 rounded-xl border border-green-200 bg-green-50 p-4">
-//           <CheckCircle2 className="h-6 w-6 shrink-0 text-green-600" />
-//           <div>
-//             <p className="text-sm font-semibold text-green-800">
-//               Thank you! Your proposal request has been sent successfully.
-//             </p>
-//             <p className="text-xs text-green-700">
-//               We will get back to you within 24 hours.
-//             </p>
-//           </div>
+//       {submitted ? (
+//         /* Thank You Message - replaces the whole form */
+//         <div className="flex flex-col items-center justify-center py-10 text-center">
+//           <CheckCircle2 className="h-16 w-16 text-green-600" />
+//           <h2 className="mt-5 text-2xl font-bold text-brand sm:text-3xl">
+//             Thank you! Your proposal request has been sent successfully.
+//           </h2>
+//           <p className="mt-3 text-base text-muted-foreground">
+//             We will get back to you within 24 hours.
+//           </p>
 //         </div>
-//       )}
+//       ) : (
+//         <>
+//           <h2 className="text-2xl font-bold text-brand sm:text-3xl">{title}</h2>
+//           <p className="mt-3 text-base text-muted-foreground">{description}</p>
 
-//       {/* Error Message */}
-//       {error && (
-//         <div className="mt-6 flex items-center gap-3 rounded-xl border border-red-200 bg-red-50 p-4">
-//           <AlertCircle className="h-6 w-6 shrink-0 text-red-600" />
-//           <p className="text-sm font-semibold text-red-800">{error}</p>
-//         </div>
-//       )}
-
-//       <form onSubmit={handleSubmit} className="mt-8 space-y-5">
-//         <div className="grid gap-5 sm:grid-cols-2">
-//           <div>
-//             <label className={labelClass}>Full Name *</label>
-//             <input
-//               type="text"
-//               name="name"
-//               required
-//               value={form.name}
-//               onChange={handleChange}
-//               className={inputClass}
-//               placeholder="John Doe"
-//               disabled={loading}
-//             />
-//           </div>
-//           <div>
-//             <label className={labelClass}>Phone *</label>
-//             <input
-//               type="tel"
-//               name="phone"
-//               required
-//               value={form.phone}
-//               onChange={handleChange}
-//               className={inputClass}
-//               placeholder="+91 98765 43210"
-//               disabled={loading}
-//             />
-//           </div>
-//         </div>
-
-//         <div className="grid gap-5 sm:grid-cols-2">
-//           <div>
-//             <label className={labelClass}>Service of Interest *</label>
-//             <select
-//               name="selectedService"
-//               required
-//               value={form.selectedService}
-//               onChange={handleChange}
-//               className={inputClass}
-//               disabled={loading}
-//             >
-//               {serviceOptions.map((option) => (
-//                 <option key={option.value} value={option.value}>
-//                   {option.label}
-//                 </option>
-//               ))}
-//             </select>
-//           </div>
-//           <div>
-//             <label className={labelClass}>Website (optional)</label>
-//             <input
-//               type="url"
-//               name="website"
-//               value={form.website}
-//               onChange={handleChange}
-//               className={inputClass}
-//               placeholder="https://yourwebsite.com"
-//               disabled={loading}
-//             />
-//           </div>
-//         </div>
-
-//         <div>
-//           <label className={labelClass}>Message *</label>
-//           <textarea
-//             name="message"
-//             required
-//             rows={4}
-//             value={form.message}
-//             onChange={handleChange}
-//             className={inputClass}
-//             placeholder="Tell us about your goals, challenges, and what you're looking to achieve..."
-//             disabled={loading}
-//           />
-//         </div>
-
-//         <button
-//           type="submit"
-//           disabled={loading}
-//           className="inline-flex w-full items-center justify-center gap-2 bg-brand px-8 py-4 text-base font-semibold text-white shadow-glow transition-all hover:bg-ocean-dark disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
-//         >
-//           {loading ? (
-//             <>
-//               <Loader2 className="h-5 w-5 animate-spin" />
-//               Sending...
-//             </>
-//           ) : (
-//             <>
-//               Send Message
-//               <Send className="h-5 w-5" />
-//             </>
+//           {/* Error Message */}
+//           {error && (
+//             <div className="mt-6 flex items-center gap-3 rounded-xl border border-red-200 bg-red-50 p-4">
+//               <AlertCircle className="h-6 w-6 shrink-0 text-red-600" />
+//               <p className="text-sm font-semibold text-red-800">{error}</p>
+//             </div>
 //           )}
-//         </button>
 
-//         <p className="text-xs text-muted-foreground">
-//           * Required fields. By submitting this form, you agree to our privacy policy.
-//         </p>
-//       </form>
+//           <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+//             <div className="grid gap-5 sm:grid-cols-2">
+//               <div>
+//                 <label className={labelClass}>Full Name *</label>
+//                 <input
+//                   type="text"
+//                   name="name"
+//                   required
+//                   value={form.name}
+//                   onChange={handleChange}
+//                   className={inputClass}
+//                   placeholder="John Doe"
+//                   disabled={loading}
+//                 />
+//               </div>
+//               <div>
+//                 <label className={labelClass}>Phone *</label>
+//                 <input
+//                   type="tel"
+//                   name="phone"
+//                   required
+//                   value={form.phone}
+//                   onChange={handleChange}
+//                   className={inputClass}
+//                   placeholder="+91 98765 43210"
+//                   disabled={loading}
+//                 />
+//               </div>
+//             </div>
+
+//             <div className="grid gap-5 sm:grid-cols-2">
+//               <div>
+//                 <label className={labelClass}>Service of Interest *</label>
+//                 <select
+//                   name="selectedService"
+//                   required
+//                   value={form.selectedService}
+//                   onChange={handleChange}
+//                   className={inputClass}
+//                   disabled={loading}
+//                 >
+//                   {serviceOptions.map((option) => (
+//                     <option key={option.value} value={option.value}>
+//                       {option.label}
+//                     </option>
+//                   ))}
+//                 </select>
+//               </div>
+//               <div>
+//                 <label className={labelClass}>Website (optional)</label>
+//                 <input
+//                   type="url"
+//                   name="website"
+//                   value={form.website}
+//                   onChange={handleChange}
+//                   className={inputClass}
+//                   placeholder="https://yourwebsite.com"
+//                   disabled={loading}
+//                 />
+//               </div>
+//             </div>
+
+//             <div>
+//               <label className={labelClass}>Message *</label>
+//               <textarea
+//                 name="message"
+//                 required
+//                 rows={4}
+//                 value={form.message}
+//                 onChange={handleChange}
+//                 className={inputClass}
+//                 placeholder="Tell us about your goals, challenges, and what you're looking to achieve..."
+//                 disabled={loading}
+//               />
+//             </div>
+
+//             <button
+//               type="submit"
+//               disabled={loading}
+//               className="inline-flex w-full items-center justify-center gap-2 bg-brand px-8 py-4 text-base font-semibold text-white shadow-glow transition-all hover:bg-ocean-dark disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+//             >
+//               {loading ? (
+//                 <>
+//                   <Loader2 className="h-5 w-5 animate-spin" />
+//                   Sending...
+//                 </>
+//               ) : (
+//                 <>
+//                   Send Message
+//                   <Send className="h-5 w-5" />
+//                 </>
+//               )}
+//             </button>
+
+//             <p className="text-xs text-muted-foreground">
+//               * Required fields. By submitting this form, you agree to our privacy policy.
+//             </p>
+//           </form>
+//         </>
+//       )}
 //     </div>
 //   );
 // }
@@ -229,7 +231,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { Send, AlertCircle, Loader2 } from 'lucide-react';
 import { BASE_URL } from '@/utils/baseUrl';
 
 // Service options for dropdown
@@ -266,9 +269,9 @@ export default function QuickProposalForm({
   description = 'Fill out the form below and our team will get back to you within one business day.',
   className = '',
 }: QuickProposalFormProps) {
+  const router = useRouter();
   const [form, setForm] = useState(initialForm);
   const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
@@ -306,15 +309,13 @@ export default function QuickProposalForm({
         throw new Error(data.message || 'Failed to submit proposal');
       }
 
-      setSubmitted(true);
-      setForm(initialForm);
-      // No timeout: the thank-you message stays in place of the form
+      // Success -> thank you page par redirect
+      router.push('/thank-you');
     } catch (err) {
       setError(
         err instanceof Error ? err.message : 'Something went wrong. Please try again.'
       );
-    } finally {
-      setLoading(false);
+      setLoading(false); // error par button wapas enable karo
     }
   };
 
@@ -326,130 +327,115 @@ export default function QuickProposalForm({
     <div
       className={`rounded-3xl border border-border bg-sky p-8 shadow-premium lg:p-10 ${className}`}
     >
-      {submitted ? (
-        /* Thank You Message - replaces the whole form */
-        <div className="flex flex-col items-center justify-center py-10 text-center">
-          <CheckCircle2 className="h-16 w-16 text-green-600" />
-          <h2 className="mt-5 text-2xl font-bold text-brand sm:text-3xl">
-            Thank you! Your proposal request has been sent successfully.
-          </h2>
-          <p className="mt-3 text-base text-muted-foreground">
-            We will get back to you within 24 hours.
-          </p>
+      <h2 className="text-2xl font-bold text-brand sm:text-3xl">{title}</h2>
+      <p className="mt-3 text-base text-muted-foreground">{description}</p>
+
+      {/* Error Message */}
+      {error && (
+        <div className="mt-6 flex items-center gap-3 rounded-xl border border-red-200 bg-red-50 p-4">
+          <AlertCircle className="h-6 w-6 shrink-0 text-red-600" />
+          <p className="text-sm font-semibold text-red-800">{error}</p>
         </div>
-      ) : (
-        <>
-          <h2 className="text-2xl font-bold text-brand sm:text-3xl">{title}</h2>
-          <p className="mt-3 text-base text-muted-foreground">{description}</p>
-
-          {/* Error Message */}
-          {error && (
-            <div className="mt-6 flex items-center gap-3 rounded-xl border border-red-200 bg-red-50 p-4">
-              <AlertCircle className="h-6 w-6 shrink-0 text-red-600" />
-              <p className="text-sm font-semibold text-red-800">{error}</p>
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit} className="mt-8 space-y-5">
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div>
-                <label className={labelClass}>Full Name *</label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  value={form.name}
-                  onChange={handleChange}
-                  className={inputClass}
-                  placeholder="John Doe"
-                  disabled={loading}
-                />
-              </div>
-              <div>
-                <label className={labelClass}>Phone *</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  required
-                  value={form.phone}
-                  onChange={handleChange}
-                  className={inputClass}
-                  placeholder="+91 98765 43210"
-                  disabled={loading}
-                />
-              </div>
-            </div>
-
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div>
-                <label className={labelClass}>Service of Interest *</label>
-                <select
-                  name="selectedService"
-                  required
-                  value={form.selectedService}
-                  onChange={handleChange}
-                  className={inputClass}
-                  disabled={loading}
-                >
-                  {serviceOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label className={labelClass}>Website (optional)</label>
-                <input
-                  type="url"
-                  name="website"
-                  value={form.website}
-                  onChange={handleChange}
-                  className={inputClass}
-                  placeholder="https://yourwebsite.com"
-                  disabled={loading}
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className={labelClass}>Message *</label>
-              <textarea
-                name="message"
-                required
-                rows={4}
-                value={form.message}
-                onChange={handleChange}
-                className={inputClass}
-                placeholder="Tell us about your goals, challenges, and what you're looking to achieve..."
-                disabled={loading}
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="inline-flex w-full items-center justify-center gap-2 bg-brand px-8 py-4 text-base font-semibold text-white shadow-glow transition-all hover:bg-ocean-dark disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
-            >
-              {loading ? (
-                <>
-                  <Loader2 className="h-5 w-5 animate-spin" />
-                  Sending...
-                </>
-              ) : (
-                <>
-                  Send Message
-                  <Send className="h-5 w-5" />
-                </>
-              )}
-            </button>
-
-            <p className="text-xs text-muted-foreground">
-              * Required fields. By submitting this form, you agree to our privacy policy.
-            </p>
-          </form>
-        </>
       )}
+
+      <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label className={labelClass}>Full Name *</label>
+            <input
+              type="text"
+              name="name"
+              required
+              value={form.name}
+              onChange={handleChange}
+              className={inputClass}
+              placeholder="John Doe"
+              disabled={loading}
+            />
+          </div>
+          <div>
+            <label className={labelClass}>Phone *</label>
+            <input
+              type="tel"
+              name="phone"
+              required
+              value={form.phone}
+              onChange={handleChange}
+              className={inputClass}
+              placeholder="+91 98765 43210"
+              disabled={loading}
+            />
+          </div>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label className={labelClass}>Service of Interest *</label>
+            <select
+              name="selectedService"
+              required
+              value={form.selectedService}
+              onChange={handleChange}
+              className={inputClass}
+              disabled={loading}
+            >
+              {serviceOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label className={labelClass}>Website (optional)</label>
+            <input
+              type="url"
+              name="website"
+              value={form.website}
+              onChange={handleChange}
+              className={inputClass}
+              placeholder="https://yourwebsite.com"
+              disabled={loading}
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className={labelClass}>Message *</label>
+          <textarea
+            name="message"
+            required
+            rows={4}
+            value={form.message}
+            onChange={handleChange}
+            className={inputClass}
+            placeholder="Tell us about your goals, challenges, and what you're looking to achieve..."
+            disabled={loading}
+          />
+        </div>
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="inline-flex w-full items-center justify-center gap-2 bg-brand px-8 py-4 text-base font-semibold text-white shadow-glow transition-all hover:bg-ocean-dark disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        >
+          {loading ? (
+            <>
+              <Loader2 className="h-5 w-5 animate-spin" />
+              Sending...
+            </>
+          ) : (
+            <>
+              Send Message
+              <Send className="h-5 w-5" />
+            </>
+          )}
+        </button>
+
+        <p className="text-xs text-muted-foreground">
+          * Required fields. By submitting this form, you agree to our privacy policy.
+        </p>
+      </form>
     </div>
   );
 }

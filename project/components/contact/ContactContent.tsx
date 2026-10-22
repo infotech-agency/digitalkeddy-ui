@@ -11,7 +11,7 @@ import { Reveal } from '@/components/common/Reveal';
 import { siteConfig, contactFaqs } from '@/lib/site-data';
 import { BASE_URL } from '@/utils/baseUrl';
 import { getWebsiteSettings } from '@/lib/settings';
-
+import { useRouter } from 'next/navigation'; 
 // API URL
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
@@ -42,6 +42,7 @@ const budgetOptions = [
 ];
 
 export default function ContactContent() {
+   const router = useRouter();
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -79,59 +80,99 @@ export default function ContactContent() {
     if (error) setError(null);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   setError(null);
 
-    try {
-      // Prepare data for API
-      const formData = {
-        name: form.name,
-        email: form.email,
-        phone: form.phone || '',
-        company: form.company || '',
-        selectedService: form.selectedService || '',
-        budget: form.budget || '',
-        website: form.website || '',
-        message: form.message || '',
-      };
+  //   try {
+  //     // Prepare data for API
+  //     const formData = {
+  //       name: form.name,
+  //       email: form.email,
+  //       phone: form.phone || '',
+  //       company: form.company || '',
+  //       selectedService: form.selectedService || '',
+  //       budget: form.budget || '',
+  //       website: form.website || '',
+  //       message: form.message || '',
+  //     };
 
-      const response = await fetch(`${BASE_URL}/proposals`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+  //     const response = await fetch(`${BASE_URL}/proposals`, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.message || 'Failed to submit proposal');
-      }
+  //     if (!response.ok) {
+  //       throw new Error(data.message || 'Failed to submit proposal');
+  //     }
 
-      // Success
-      setSubmitted(true);
-      setForm({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        selectedService: '',
-        budget: '',
-        website: '',
-        message: '',
-      });
+  //     // Success
+  //     setSubmitted(true);
+  //     setForm({
+  //       name: '',
+  //       email: '',
+  //       phone: '',
+  //       company: '',
+  //       selectedService: '',
+  //       budget: '',
+  //       website: '',
+  //       message: '',
+  //     });
       
-      // Hide success message after 5 seconds
-      setTimeout(() => setSubmitted(false), 5000);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
-    } finally {
-      setLoading(false);
+  //     // Hide success message after 5 seconds
+  //     setTimeout(() => setSubmitted(false), 5000);
+  //   } catch (err) {
+  //     setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+  setError(null);
+
+  try {
+    // Prepare data for API
+    const formData = {
+      name: form.name,
+      email: form.email,
+      phone: form.phone || '',
+      company: form.company || '',
+      selectedService: form.selectedService || '',
+      budget: form.budget || '',
+      website: form.website || '',
+      message: form.message || '',
+    };
+
+    const response = await fetch(`${BASE_URL}/proposals`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || 'Failed to submit proposal');
     }
-  };
+
+    // Success -> thank you page par redirect
+    router.push('/thank-you');
+  } catch (err) {
+    setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    setLoading(false); // error par button wapas enable karo
+  }
+};
 
   return (
     <>
